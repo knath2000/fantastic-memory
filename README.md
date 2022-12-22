@@ -1,3 +1,11 @@
-In this project I will be looking at a variety of different stats and how they changed after the introduction of VAR into the English Premier League.
-The first category we will be looking at is number of penalties awarded per season betwen the 12-13 and 21-22 seasons. After pulling some data from
-Transfermarkt.us, the results are clearly visible. Unless otherwise stated, the code for the following findings can be found in the main project directory.
+# Premier League Stat Changes
+
+This is my project where I look at how different stats have changed over time in the English Premier League. My first set of objectives will be to see how different stats changed after VAR was introduced. 
+
+## Getting Started
+
+The first thing we will look at is the number of penalties awarded changed once VAR was introduced in the 19-20 season. 
+
+### Change in Number of Penalties Awarded
+
+Please refer to the Penalties.Rmd file for the code and line-by-line explanations. The code generated the graph below, which gives us a preliminary answer to the question posed before.
