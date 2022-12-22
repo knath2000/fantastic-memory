@@ -1,0 +1,53 @@
+---
+title: "Penalties"
+output: html_document
+date: "2022-12-22"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r}
+#First let's read in the data from the attached csv file. It contains how many penalties a team scored, was awarded, missed, and its conversion rate. The data is grouped by season starting from 12-13 and ending in the 21-22 season
+df<-read.csv('https://raw.githubusercontent.com/knath2000/fantastic-memory/main/stats.csv')
+head(df)
+```
+
+```{r}
+#Vector to hold total penalties awarded per season
+perseason<-c()
+
+#Vector holding all season labels
+seasons<-unique(df$Season)
+
+#Creating a temp dataframe with rows grouped by season. Then calculate the total number of penalties awarded per season add that to the perseason vector
+for (season in seasons){
+  tempdf<-filter(df, df$Season == season)
+  awarded<-sum(tempdf$Awarded)
+  perseason<-c(perseason, awarded)
+}
+
+#Assign names to the calculated values for organizational purposes
+names(perseason) <- seasons
+#Turn the perseason vector into a DataFrame for use in ggplot later
+values<-data.frame(Season=seasons, PenaltiesAwarded=perseason)
+
+#Create a ggplot line plot with points highlighting the data
+ggplot(data=values, aes(x=Season, y=PenaltiesAwarded, group=1)) +
+  geom_vline(xintercept = "19-20", color = "red")+
+  geom_line()+
+  geom_point()+
+  labs(title = "Number of Penalties Awarded per Season Before and After \n the Introduction of VAR", 
+       subtitle= "Data gathered from Transfermarket.us",
+       caption = "The red line indicates when VAR was introduced in the Premier League")+
+  theme(plot.subtitle = element_text(hjust = 0.5, face = "italic"), 
+        plot.title = element_text(hjust = 0.5), 
+        plot.caption = element_text(hjust=0.0))
+```
