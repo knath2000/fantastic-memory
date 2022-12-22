@@ -9,3 +9,5 @@ The first thing we will look at is the number of penalties awarded changed once 
 ### Change in Number of Penalties Awarded
 
 Please refer to the Penalties.Rmd file for the code and line-by-line explanations. The code generated the graph below, which gives us a preliminary answer to the question posed before.
+
+<img src="000039.png" alt="Alt text" title="Optional title">
