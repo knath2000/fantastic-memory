@@ -11,3 +11,5 @@ The first thing we will look at is the number of penalties awarded changed once 
 Please refer to the Penalties.Rmd file for the code and line-by-line explanations. The code generated the graph below, which gives us a preliminary answer to the question posed before.
 
 <img src="000039.png" alt="Alt text" title="Optional title">
+
+The graph shows us that although the overall number of penalties awarded was trending up since the beginning, there was a sharp increase after the 19-20 season. In fact the 19-20 season was a shortened by over 3 months due to the COVID pandemic. However, the season after resumed as a full season and we can see a massive spike in the number of penalties awarded.
